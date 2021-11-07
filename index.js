@@ -1,18 +1,20 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const cors = require("cors");
+require("dotenv").config();
 
 app.use(cors());
 app.use("/", express.json());
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "student",
-  database: "pedro",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DATABASE,
+  port: process.env.DB_PORT,
 });
 
-app.listen(3001, () => console.log("running on port 3001"));
+app.listen(process.env.NODE_PORT, () => console.log("running on port 3001"));
 
 app.get("/", (req, res) => {
   //   const sqlInsert =
