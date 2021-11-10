@@ -1,0 +1,3 @@
+Database : MySQL 8.0
+Node.JS
+mysql2 library from npm (npm i mysql2)

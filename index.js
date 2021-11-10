@@ -14,7 +14,7 @@ const db = mysql.createPool({
   port: process.env.DB_PORT,
 });
 
-app.listen(process.env.NODE_PORT, () => console.log("running on port 3001"));
+app.listen(process.env.NODE_PORT, () => console.log("running on port 80"));
 
 app.get("/", (req, res) => {
   //   const sqlInsert =
